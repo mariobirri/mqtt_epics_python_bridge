@@ -91,8 +91,7 @@ def on_message(client, userdata, msg):
     print(msg.topic+" "+str(msg.payload))
     if msg.topic == "data":
         global msgData 
-	ts = int(msg.payload[0:10])
-	msgData = datetime.utcfromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
+	msgData = datetime.utcfromtimestamp(int(msg.payload[0:10])).strftime('%Y-%m-%d %H:%M:%S')
         #msgData = str(msg.payload)
 
     elif msg.topic == "test":
