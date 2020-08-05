@@ -15,12 +15,16 @@ import paho.mqtt.publish as publish
 MQTT_SERVER = "129.129.130.80"
 MQTT_TOPIC_01 = "data"
 MQTT_TOPIC_02 = "test"
+MQTT_TOPIC_03 = "fill"
+MQTT_TOPIC_04 = "v1"
+MQTT_TOPIC_05 = "v2"
+MQTT_TOPIC_06 = "v3"
 
 
 ###
 # Epics definitions
 ###
-prefix = 'MTEST:'
+prefix = 'X10DA-ES-GMS:'
 pvdb = {
     'DATA' : {
 	'type' : 'char',
@@ -31,6 +35,26 @@ pvdb = {
         'type' : 'string',
         'scan' : 0.2,
     },
+    'FILL' : {
+        'type' : 'int',
+        'scan' : 0.2,
+    },
+    'V1' : {
+        'type' : 'int',
+        'scan' : 0.2,
+        'prec' : 5,
+    },
+    'V2' : {
+        'type' : 'int',
+        'scan' : 0.2,
+        'prec' : 5,
+    },
+    'V3' : {
+        'type' : 'int',
+        'scan' : 0.2,
+        'prec' : 5,
+    },
+
 }
 
 ###
@@ -38,6 +62,10 @@ pvdb = {
 ###
 msgData = ""
 msgTest = ""
+msgFill = 0
+msgV1 = 0
+msgV2 = 0
+msgV3 = 0
 
 class myDriver(Driver):
     def  __init__(self):
@@ -50,6 +78,18 @@ class myDriver(Driver):
         elif reason == 'TEST':
            global msgTest
            value = msgTest
+        elif reason == 'FILL':
+           global msgFill
+           value = msgFill
+	elif reason == 'V1':
+           global msgV1
+           value = msgV1
+	elif reason == 'V2':
+           global msgV2
+           value = msgV2
+	elif reason == 'V3':
+           global msgV3
+           value = msgV3
 	else:
 	   value.self.getParam(reason)
 	return value
@@ -65,6 +105,11 @@ class myDriver(Driver):
 	   global msgTest
 	   msgTest = value
            publish.single(MQTT_TOPIC_02, msgTest, hostname=MQTT_SERVER)
+
+	if reason == 'FILL':
+           global msgFill
+           msgFill = value
+           publish.single(MQTT_TOPIC_03, msgFill, hostname=MQTT_SERVER)
         if status:
            self.setParam(reason, value)
 
@@ -85,6 +130,10 @@ def on_connect(client, userdata, flags, rc):
     # reconnect then subscriptions will be renewed.
     client.subscribe(MQTT_TOPIC_01)
     client.subscribe(MQTT_TOPIC_02)
+    client.subscribe(MQTT_TOPIC_03)
+    client.subscribe(MQTT_TOPIC_04)
+    client.subscribe(MQTT_TOPIC_05)
+    client.subscribe(MQTT_TOPIC_06)
 
 # The callback for when a PUBLISH message is received from the server.
 def on_message(client, userdata, msg):
@@ -97,6 +146,21 @@ def on_message(client, userdata, msg):
     elif msg.topic == "test":
 	global msgTest
 	msgTest = msg.payload
+    
+    elif msg.topic == "fill":
+        global msgFill
+        msgFill = int(msg.payload)
+
+    elif msg.topic == "v1":
+        global msgV1
+        msgV1 = int(msg.payload)
+    elif msg.topic == "v2":
+        global msgV2
+        msgV2 = int(msg.payload)
+    elif msg.topic == "v3":
+        global msgV3
+        msgV3 = int(msg.payload)
+
     else:
         print("unknown topic: "+msg.topic)
 
