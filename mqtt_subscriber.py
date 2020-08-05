@@ -101,15 +101,16 @@ class myDriver(Driver):
            msgData = value
            publish.single(MQTT_TOPIC_01, msgData, hostname=MQTT_SERVER)
 	
-	if reason == 'TEST':
+	elif reason == 'TEST':
 	   global msgTest
 	   msgTest = value
            publish.single(MQTT_TOPIC_02, msgTest, hostname=MQTT_SERVER)
 
-	if reason == 'FILL':
+	elif reason == 'FILL':
            global msgFill
            msgFill = value
            publish.single(MQTT_TOPIC_03, msgFill, hostname=MQTT_SERVER)
+        
         if status:
            self.setParam(reason, value)
 
