@@ -1,30 +1,28 @@
 ###
 # Global variables to store the values for the bridge
 ###
-msgV1 = 0;
-msgV2 = 0;
-msgV3 = 0;
-msgV4 = 0;
-msgV5 = 0;
-msgV6 = 0;
-msgV7 = 0;
-msgV8 = 0;
-msgMix1 = "";
-msgMix2 = "";
-msgMix3 = "";
-msgMix4 = "";
-receipt = [];
-msgGas1 = "";
-msgGas2 = "";
-msgPGas1 = 0;
-msgPGas2 = 0;
-energy = "";
-coresponding = "";
-msgDataC = "";
-msgDataV = "";
-msgDataP = "";
-pressure1 = -1.0;
-pressure2 = -1.0;
-pressureSP = -1.0;
 
-msgFill = 0
+#DATAV
+V1 = 0;
+V2 = 0;
+V3 = 0;
+V4 = 0;
+V5 = 0;
+V6 = 0;
+V7 = 0;
+V8 = 0;
+
+#DATAP
+ppc = -1;
+ppv = -1;
+
+#DATAC
+ic = 0;
+gas1 = 0;
+gas2 = 0;
+pgas1 = 0;
+pgas2 = 0;
+cycle = 0;
+actcycle = 0;
+status = 0;
+setpoint = 0;
