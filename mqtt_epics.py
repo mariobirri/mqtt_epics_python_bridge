@@ -15,7 +15,7 @@ from epicsDriver import *
 ###
 # MQTT brocker and topics
 ###
-MQTT_SERVER = "localhost" #"129.129.130.80"
+MQTT_SERVER = "129.129.130.80"
 MQTT_TOPIC_01 = "dataV"
 MQTT_TOPIC_02 = "dataP"
 MQTT_TOPIC_03 = "dataC"
