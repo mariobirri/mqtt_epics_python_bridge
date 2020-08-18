@@ -9,8 +9,8 @@ import paho.mqtt.client as mqtt
 import paho.mqtt.publish as publish
 from pyxtension.Json import Json
 from epicsDefinition import *
-from variables import *
-from epicsDriver import *	
+import variables as var
+from epicsDriver import *
 
 ###
 # MQTT brocker and topics
@@ -19,11 +19,12 @@ MQTT_SERVER = "129.129.130.80"
 MQTT_TOPIC_01 = "dataV"
 MQTT_TOPIC_02 = "dataP"
 MQTT_TOPIC_03 = "dataC"
+MQTT_TOPIC_04 = "dataL"
 
 if __name__ == '__main__':
     server = SimpleServer()
     server.createPV(prefix, pvdb)
-    myDriver()
+    driver = myDriver()
 
 
 # The callback for when the client receives a CONNACK response from the server.
@@ -35,64 +36,49 @@ def on_connect(client, userdata, flags, rc):
     client.subscribe(MQTT_TOPIC_01)
     client.subscribe(MQTT_TOPIC_02)
     client.subscribe(MQTT_TOPIC_03)
+    client.subscribe(MQTT_TOPIC_04)
 
 
 # The callback for when a PUBLISH message is received from the server.
 def on_message(client, userdata, msg):
     print(msg.topic+" "+str(msg.payload))
-    if msg.topic == "data":
-        global msgData 
-	msgData = datetime.utcfromtimestamp(int(msg.payload[0:10])).strftime('%Y-%m-%d %H:%M:%S')
-        #msgData = str(msg.payload)
 
-    elif msg.topic == "fill":
-        global msgFill
-        msgFill = int(msg.payload)
+    #DATAP
+    if msg.topic == MQTT_TOPIC_02:
+        dataP = Json(str(msg.payload))
+	var.ppc = float(dataP.dataP.pressurePC)
+        var.ppv = float(dataP.dataP.pressurePV)
 
-    elif msg.topic == "v1":
-        global msgV1
-        msgV1 = int(msg.payload)
-    elif msg.topic == "v2":
-        global msgV2
-        msgV2 = int(msg.payload)
-    elif msg.topic == "v3":
-        global msgV3
-        msgV3 = int(msg.payload)
+    #DATAV
+    elif msg.topic == MQTT_TOPIC_01:
+        dataV = Json(str(msg.payload))
+	var.V1 = int(dataV.dataV.V1)
+        var.V2 = int(dataV.dataV.V2)
+        var.V3 = int(dataV.dataV.V3)
+        var.V4 = int(dataV.dataV.V4)
+        var.V5 = int(dataV.dataV.V5)
+        var.V6 = int(dataV.dataV.V6)
+        var.V7 = int(dataV.dataV.V7)
+        var.V8 = int(dataV.dataV.V8)
 
-    elif msg.topic == "dataP":
-        global msgDataP, pressure1, pressure2, pressureSP
-        msgDataP = str(msg.payload)
-	temp = Json(msgDataP)
-	pressure1 = float(temp.dataP.pressurePC)
-        pressure2 = float(temp.dataP.pressurePV)
-	pressureSP = float(temp.dataP.setpointPC)
-    
-    elif msg.topic == "dataV":
-        global msgDataV, V1, V2, V3, V4, V5, V6, V7, V8
-        msgDataV = str(msg.payload)
-	temp = Json(msgDataV)
-	msgV1 = int(temp.dataV.V1)
-        msgV2 = int(temp.dataV.V2)
-        msgV3 = int(temp.dataV.V3)
-        msgV4 = int(temp.dataV.V4)
-        msgV5 = int(temp.dataV.V5)
-        msgV6 = int(temp.dataV.V6)
-        msgV7 = int(temp.dataV.V7)
-        msgV8 = int(temp.dataV.V8)
+    #DATAC
+    elif msg.topic == MQTT_TOPIC_03:
+        dataC = Json(str(msg.payload))
+	var.ic = int(dataC.dataC.IC)
+        var.gas1 = int(dataC.dataC.gas1)
+        var.gas2 = int(dataC.dataC.gas2)
+        var.pgas1 = int(dataC.dataC.pgas1)
+        var.pgas2 = int(dataC.dataC.pgas2)
+	var.cycle = int(dataC.dataC.zyklusnr)
+        var.actcycle = int(dataC.dataC.actzyklus)
+	var.status = int(dataC.dataC.status)
+	var.setpoint = float(dataC.dataC.setpoint)
 
-    elif msg.topic == "dataC":
-        global msgDataC, receipt, msgMix1, msgMix2, msgMix3, msgMix4
-        msgDataC = str(msg.payload)
-	temp = Json(msgDataC)
-	
-	receipt = str(temp.dataC.pcGM)
-
-	msgMix1 = str(temp.dataC.pcGM[0])
-        msgMix2 = str(temp.dataC.pcGM[1])
-        msgMix3 = str(temp.dataC.pcGM[2])
-        msgMix4 = str(temp.dataC.pcGM[3])
-	
-
+    #DATAL
+    elif msg.topic == MQTT_TOPIC_04:
+        dataL = Json(str(msg.payload))
+	for x in range(len(dataL.dataL.pcGM)):
+    		var.list[x] = dataL.dataL.pcGM[x]
     else:
         print("unknown topic: "+msg.topic)
 

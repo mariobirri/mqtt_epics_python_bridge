@@ -13,6 +13,7 @@ V7 = 0;
 V8 = 0;
 
 #DATAP
+global ppc, ppv
 ppc = -1;
 ppv = -1;
 
@@ -26,3 +27,6 @@ cycle = 0;
 actcycle = 0;
 status = 0;
 setpoint = 0;
+
+#DATAL
+list = []

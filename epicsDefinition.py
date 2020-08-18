@@ -4,12 +4,6 @@
 prefix = 'X10DA-ES-GMS:' 
 pvdb = {
 
-
-    #DATA
-    'DATAC' : {'type' : 'char', 'scan' : 0.2,'count' : 300},
-    'DATAV' : {'type' : 'char', 'scan' : 0.2,'count' : 300},
-    'DATAP' : {'type' : 'char', 'scan' : 0.2,'count' : 300},
-
     #DATAV
     'V1' : {'type' : 'int', 'scan' : 0.2},
     'V2' : {'type' : 'int', 'scan' : 0.2},
@@ -33,7 +27,7 @@ pvdb = {
     'CYCLE' : {'type' : 'int','scan' : 0.2},
     'ACTCYCLE' : {'type' : 'int','scan' : 0.2},
     'STATUS' : {'type' : 'int','scan' : 0.2},
-    'SETPOINT' : {'type' : 'int','scan' : 0.2},
+    'SETPOINT' : {'type' : 'float','scan' : 0.2, 'prec' : 3, 'unit' : 'bar'},
 
 
 
