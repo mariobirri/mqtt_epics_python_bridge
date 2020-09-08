@@ -69,9 +69,10 @@ def on_message(client, userdata, msg):
 
     #DATAL
     elif msg.topic == var.MQTT_TOPIC_04:
-        dataL = Json(str(msg.payload).replace('-',99))
+        dataL = Json(str(msg.payload))
 	for x in range(len(dataL.dataL.pcGM)):
     		var.dataL[x] = dataL.dataL.pcGM[x]
+		print(str(var.dataL[x]))
 
     #DATASET
     elif msg.topic == var.MQTT_TOPIC_05:
