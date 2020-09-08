@@ -1,4 +1,15 @@
 ###
+# MQTT brocker and topics
+###
+MQTT_SERVER = "129.129.130.80"
+MQTT_TOPIC_01 = "dataV"
+MQTT_TOPIC_02 = "dataP"
+MQTT_TOPIC_03 = "dataC"
+MQTT_TOPIC_04 = "dataL"
+MQTT_TOPIC_05 = "dataSet"
+
+
+###
 # Global variables to store the values for the bridge
 ###
 
@@ -29,4 +40,30 @@ status = 0;
 setpoint = 0;
 
 #DATAL
-list = []
+dataL = ['','','','','','','','','','','','','']
+row = "";
+listnr = 0;
+
+#DATASET
+setIc = 0;
+setGas1 = 0;
+setGas2 = 0;
+setPgas1 = 0;
+setPgas2 = 0;
+setCycle = 0;
+setSetpoint = 0.0;
+
+sendMsg = "";
+
+elements = [' ', 'AR', 'N2', 'HE', 'NE','-'] 
+
+def numberToElement(inNumber):
+	global elements
+	return elements[inNumber]
+
+def elementToNumber(inElement):
+        global elements
+	for x in range(len(elements)):
+	        if elements[x] == inElement:
+			return elements[inNumber]
+	return 0
