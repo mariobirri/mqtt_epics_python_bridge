@@ -69,17 +69,17 @@ class myDriver(Driver):
 		var.setPgas2 = temp.pgas2;
 		var.setSetpoint = temp.sollwert;
         elif reason == 'SET.IC': var.setIc = value;
-        elif reason == 'SET.GAS1': var.setGas1 = var.elementToNumber(value); print(var.setGas1);
-        elif reason == 'SET.GAS2': var.setGas2 = var.elementToNumber(value); print(var.setGas2);
+        elif reason == 'SET.GAS1': var.setGas1 = var.elementToNumber(value); #print(var.setGas1);
+        elif reason == 'SET.GAS2': var.setGas2 = var.elementToNumber(value); #print(var.setGas2);
         elif reason == 'SET.PGAS1': var.setPgas1 = value;
         elif reason == 'SET.PGAS2': var.setPgas2 = value;
         elif reason == 'SET.CYCLE': var.setCycle = value;
-        elif reason == 'SET.SETPOINT': var.setSetpoint = float(value);
+        elif reason == 'SET.SETPOINT': var.setSetpoint = value;
 
 	elif reason == 'SEND':
 		var.sendMsg = Json( ('ic',var.setIc),('gas1',var.setGas1),('gas2',var.setGas2), ('pgas1',var.setPgas1), ('pgas2',var.setPgas2), ('zyklus',var.setCycle), ('sollwert',var.setSetpoint)); 
-		print(str(var.setGas1))
-		print(str(var.setGas2))
+		#print(str(var.setGas1))
+		#print(str(var.setGas2))
 		publish.single(var.MQTT_TOPIC_05, str(var.sendMsg), hostname=var.MQTT_SERVER);
 
 	elif reason == 'STOP': var.status = false; print(var.status); #publish.single(MQTT_TOPIC_02, msgTest, hostname=MQTT_SERVER);
