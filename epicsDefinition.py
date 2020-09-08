@@ -47,7 +47,7 @@ pvdb = {
     'SET.PGAS1' : {'type' : 'int','scan' : 0.2},
     'SET.PGAS2' : {'type' : 'int','scan' : 0.2},
     'SET.CYCLE' : {'type' : 'int','scan' : 0.2},
-    'SET.SETPOINT' : {'type' : 'float','scan' : 0.2, 'prec' : 3, 'unit' : 'bar'},
+    'SET.SETPOINT' : {'type' : 'float','scan' : 0.2, 'prec' : 3},
     'COPY' : {'type' : 'int','scan' : 0.2},
     'SEND' : {'type' : 'int','scan' : 0.2},
 
