@@ -51,7 +51,7 @@ class myDriver(Driver):
         elif reason == 'SET.PGAS1': value = var.setPgas1;
         elif reason == 'SET.PGAS2': value = var.setPgas2;
         elif reason == 'SET.CYCLE': value = var.setCycle;
-        elif reason == 'SET.SETPOINT': value = float(var.setSetpoint);
+        elif reason == 'SET.SETPOINT': value = var.setSetpoint;
 
 
 
