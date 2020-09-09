@@ -1,13 +1,15 @@
 ###
 # MQTT brocker and topics
 ###
-MQTT_SERVER = "129.129.130.80"
+MQTT_SERVER = "localhost" #MQTT_SERVER = "129.129.130.80"
 MQTT_TOPIC_01 = "dataV"
 MQTT_TOPIC_02 = "dataP"
 MQTT_TOPIC_03 = "dataC"
 MQTT_TOPIC_04 = "dataL"
 MQTT_TOPIC_05 = "dataSet"
 MQTT_TOPIC_06 = "vSet"
+MQTT_TOPIC_07 = "stop"
+
 
 ###
 # Global variables to store the values for the bridge
@@ -55,7 +57,7 @@ setSetpoint = 0.0;
 
 sendMsg = "";
 
-elements = [' ', 'AR', 'N2', 'HE', 'NE',' '] 
+elements = [' ', 'AR', 'N2', 'HE', 'NE'] 
 elementsArrGas1 = elements
 elementsArrGas2 = elements
 elementSelectedGas1 = 0;

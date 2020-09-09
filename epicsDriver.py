@@ -54,7 +54,7 @@ class myDriver(Driver):
         elif reason == 'SET.SETPOINT': value = var.setSetpoint;
 
 	#OTHERS
-	elif reason == 'ELEMENT.G1': value = var.elementSelectedGas1; print(var.elementSelectedGas1);
+	elif reason == 'ELEMENT.G1': value = var.elementSelectedGas1; 
 	elif reason == 'ELEMENT.G2': value = var.elementSelectedGas2;
 
 	else: value = self.getParam(reason)
@@ -73,7 +73,7 @@ class myDriver(Driver):
         elif reason == 'SET.IC': var.setIc = value;
         elif reason == 'SET.GAS1': var.setGas1 = var.elementToNumber(value); #print(var.setGas1);
         elif reason == 'SET.GAS2': var.setGas2 = var.elementToNumber(value); #print(var.setGas2);
-        elif reason == 'SET.PGAS1': var.setPgas1 = value;
+        elif reason == 'SET.PGAS1': var.setPgas1 = value; var.setPgas2 = 100 - value;
         elif reason == 'SET.PGAS2': var.setPgas2 = value;
         elif reason == 'SET.CYCLE': var.setCycle = value;
         elif reason == 'SET.SETPOINT': var.setSetpoint = value;
@@ -88,7 +88,7 @@ class myDriver(Driver):
 		#print(str(var.setGas2))
 		publish.single(var.MQTT_TOPIC_05, str(var.sendMsg), hostname=var.MQTT_SERVER);
 
-	elif reason == 'STOP': var.status = false; print(var.status); 
+	elif reason == 'STOP': publish.single(var.MQTT_TOPIC_07, "1", hostname=var.MQTT_SERVER); 
 
         #DATAV
         elif reason == 'V1': 
