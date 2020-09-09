@@ -1,3 +1,5 @@
+import variables as var
+
 ###
 # Epics definitions
 ###
@@ -53,6 +55,9 @@ pvdb = {
 
     'STOP' : {'type' : 'int','scan' : 0.2},
 
+    #OTHER
+    'ELEMENT.G1' : {'type' : 'enum', 'enums' : var.elementsArrGas1},
+    'ELEMENT.G2' : {'type' : 'enum', 'enums' : var.elementsArrGas2},
 #    'ENERGY' : {'type' : 'char','scan' : 0.2,'count' : 10},
 #    'CORESPONDING' : {'type' : 'char','scan' : 0.2,'count' : 10},
 #    'SEND' : {'type' : 'int','scan' : 0.2},

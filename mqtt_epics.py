@@ -29,7 +29,7 @@ def on_connect(client, userdata, flags, rc):
     client.subscribe(var.MQTT_TOPIC_03)
     client.subscribe(var.MQTT_TOPIC_04)
     client.subscribe(var.MQTT_TOPIC_05)
-
+    client.subscribe(var.MQTT_TOPIC_06)
 
 
 # The callback for when a PUBLISH message is received from the server.
@@ -74,7 +74,7 @@ def on_message(client, userdata, msg):
     		var.dataL[x] = dataL.dataL.pcGM[x]
 
     #DATASET
-    elif msg.topic == var.MQTT_TOPIC_05:
+    elif msg.topic == var.MQTT_TOPIC_05 or msg.topic == var.MQTT_TOPIC_06:
         print("sent data!")
 
 

@@ -7,7 +7,7 @@ MQTT_TOPIC_02 = "dataP"
 MQTT_TOPIC_03 = "dataC"
 MQTT_TOPIC_04 = "dataL"
 MQTT_TOPIC_05 = "dataSet"
-
+MQTT_TOPIC_06 = "vSet"
 
 ###
 # Global variables to store the values for the bridge
@@ -55,7 +55,11 @@ setSetpoint = 0.0;
 
 sendMsg = "";
 
-elements = [' ', 'AR', 'N2', 'HE', 'NE','-'] 
+elements = [' ', 'AR', 'N2', 'HE', 'NE',' '] 
+elementsArrGas1 = elements
+elementsArrGas2 = elements
+elementSelectedGas1 = 0;
+elementSelectedGas2 = 0;
 
 def numberToElement(inNumber):
 	global elements

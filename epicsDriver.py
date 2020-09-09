@@ -42,7 +42,7 @@ class myDriver(Driver):
         elif reason == 'DATAL.GAS2' and str(var.row) != "": temp = Json(str(var.row)); value = str(var.numberToElement(int(temp.gas2)));
         elif reason == 'DATAL.PGAS1' and str(var.row) != "": temp = Json(str(var.row)); value = str(temp.pgas1);
         elif reason == 'DATAL.PGAS2' and str(var.row) != "": temp = Json(str(var.row)); value = str(temp.pgas2);
-        elif reason == 'DATAL.SOLLWERT' and str(var.row) != "": temp = Json(str(var.row)); value = temp.sollwert;
+        elif reason == 'DATAL.SOLLWERT' and str(var.row) != "": temp = Json(str(var.row)); value = temp.setpoint;
 
         #DATASET
         elif reason == 'SET.IC': value = var.setIc;
@@ -53,7 +53,9 @@ class myDriver(Driver):
         elif reason == 'SET.CYCLE': value = var.setCycle;
         elif reason == 'SET.SETPOINT': value = var.setSetpoint;
 
-
+	#OTHERS
+	elif reason == 'ELEMENT.G1': value = var.elementSelectedGas1; print(var.elementSelectedGas1);
+	elif reason == 'ELEMENT.G2': value = var.elementSelectedGas2;
 
 	else: value = self.getParam(reason)
 	return value
@@ -67,7 +69,7 @@ class myDriver(Driver):
 		var.setGas2 = temp.gas2;
 		var.setPgas1 = temp.pgas1;
 		var.setPgas2 = temp.pgas2;
-		var.setSetpoint = temp.sollwert;
+		var.setSetpoint = temp.setpoint;
         elif reason == 'SET.IC': var.setIc = value;
         elif reason == 'SET.GAS1': var.setGas1 = var.elementToNumber(value); #print(var.setGas1);
         elif reason == 'SET.GAS2': var.setGas2 = var.elementToNumber(value); #print(var.setGas2);
@@ -75,6 +77,10 @@ class myDriver(Driver):
         elif reason == 'SET.PGAS2': var.setPgas2 = value;
         elif reason == 'SET.CYCLE': var.setCycle = value;
         elif reason == 'SET.SETPOINT': var.setSetpoint = value;
+	
+        elif reason == 'ELEMENT.G1': var.elementSelectedGas1 = value; var.setGas1 = value;
+        elif reason == 'ELEMENT.G2': var.elementSelectedGas2 = value; var.setGas2 = value;
+
 
 	elif reason == 'SEND':
 		var.sendMsg = Json( ('ic',var.setIc),('gas1',var.setGas1),('gas2',var.setGas2), ('pgas1',var.setPgas1), ('pgas2',var.setPgas2), ('zyklus',var.setCycle), ('sollwert',var.setSetpoint)); 
@@ -82,7 +88,44 @@ class myDriver(Driver):
 		#print(str(var.setGas2))
 		publish.single(var.MQTT_TOPIC_05, str(var.sendMsg), hostname=var.MQTT_SERVER);
 
-	elif reason == 'STOP': var.status = false; print(var.status); #publish.single(MQTT_TOPIC_02, msgTest, hostname=MQTT_SERVER);
+	elif reason == 'STOP': var.status = false; print(var.status); 
+
+        #DATAV
+        elif reason == 'V1': 
+		var.V1 = value;
+		msg = Json(('V1',var.V1),('V2',var.V2),('V3',var.V3),('V4',var.V4),('V5',var.V5),('V6',var.V6),('V7',var.V7),('V8',var.V8));
+                publish.single(var.MQTT_TOPIC_06, str(msg), hostname=var.MQTT_SERVER);
+        elif reason == 'V2': 
+		var.V2 = value; 
+		msg = Json(('V1',var.V1),('V2',var.V2),('V3',var.V3),('V4',var.V4),('V5',var.V5),('V6',var.V6),('V7',var.V7),('V8',var.V8));
+                publish.single(var.MQTT_TOPIC_06, str(msg), hostname=var.MQTT_SERVER);
+        elif reason == 'V3': 
+		var.V3 = value; 
+		msg = Json(('V1',var.V1),('V2',var.V2),('V3',var.V3),('V4',var.V4),('V5',var.V5),('V6',var.V6),('V7',var.V7),('V8',var.V8));
+		publish.single(var.MQTT_TOPIC_06, str(msg), hostname=var.MQTT_SERVER);
+        elif reason == 'V4': 
+		var.V4 = value;
+		msg = Json(('V1',var.V1),('V2',var.V2),('V3',var.V3),('V4',var.V4),('V5',var.V5),('V6',var.V6),('V7',var.V7),('V8',var.V8));
+                publish.single(var.MQTT_TOPIC_06, str(msg), hostname=var.MQTT_SERVER);
+        elif reason == 'V5': 
+		var.V5 = value;
+		msg = Json(('V1',var.V1),('V2',var.V2),('V3',var.V3),('V4',var.V4),('V5',var.V5),('V6',var.V6),('V7',var.V7),('V8',var.V8));
+                publish.single(var.MQTT_TOPIC_06, str(msg), hostname=var.MQTT_SERVER);
+        elif reason == 'V6': 
+		var.V6 = value;
+		msg = Json(('V1',var.V1),('V2',var.V2),('V3',var.V3),('V4',var.V4),('V5',var.V5),('V6',var.V6),('V7',var.V7),('V8',var.V8));
+                publish.single(var.MQTT_TOPIC_06, str(msg), hostname=var.MQTT_SERVER);
+        elif reason == 'V7': 
+		var.V7 = value;
+		msg = Json(('V1',var.V1),('V2',var.V2),('V3',var.V3),('V4',var.V4),('V5',var.V5),('V6',var.V6),('V7',var.V7),('V8',var.V8));
+                publish.single(var.MQTT_TOPIC_06, str(msg), hostname=var.MQTT_SERVER);
+        elif reason == 'V8': 
+		var.V8 = value;
+		msg = Json(('V1',var.V1),('V2',var.V2),('V3',var.V3),('V4',var.V4),('V5',var.V5),('V6',var.V6),('V7',var.V7),('V8',var.V8));
+                publish.single(var.MQTT_TOPIC_06, str(msg), hostname=var.MQTT_SERVER);
+
+
+#publish.single(MQTT_TOPIC_02, msgTest, hostname=MQTT_SERVER);
 
 	#elif reason == 'TEST': global msgTest; msgTest = value; publish.single(MQTT_TOPIC_02, msgTest, hostname=MQTT_SERVER);
 	#elif reason == 'FILL': global msgFill; msgFill = value; publish.single(MQTT_TOPIC_03, msgFill, hostname=MQTT_SERVER);
