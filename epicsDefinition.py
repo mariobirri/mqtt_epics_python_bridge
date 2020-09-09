@@ -21,7 +21,7 @@ pvdb = {
     'PPV' : {'type' : 'float', 'scan' : 0.2, 'prec' : 3, 'unit' : 'bar'},
 
     #DATAC
-    'IC' : {'type' : 'enum', 'enums' : var.icEntry},
+    'IC' : {'type' : 'int','scan' : 0.2},
     'GAS1' : {'type' : 'char','scan' : 0.2, 'count' : 5},
     'GAS2' : {'type' : 'char','scan' : 0.2, 'count' : 5},
     'PGAS1' : {'type' : 'float','scan' : 0.2, 'prec' : 2},
@@ -43,7 +43,7 @@ pvdb = {
     'DATAL.SOLLWERT' : {'type' : 'float', 'scan' : 0.2, 'prec' : 3, 'unit' : 'bar'},
 
     #DATASET
-    'SET.IC' : {'type' : 'int','scan' : 0.2},
+    'SET.IC' :  {'type' : 'enum', 'enums' : var.icEntry},
     'SET.GAS1' : {'type' : 'char','scan' : 0.2, 'count' : 2},
     'SET.GAS2' : {'type' : 'char','scan' : 0.2, 'count' : 2},
     'SET.PGAS1' : {'type' : 'float','scan' : 0.2, 'prec' : 2},
