@@ -1,7 +1,7 @@
 ###
 # MQTT brocker and topics
 ###
-MQTT_SERVER = "localhost" #MQTT_SERVER = "129.129.130.80"
+MQTT_SERVER = "129.129.130.80"
 MQTT_TOPIC_01 = "dataV"
 MQTT_TOPIC_02 = "dataP"
 MQTT_TOPIC_03 = "dataC"
@@ -11,7 +11,7 @@ MQTT_TOPIC_06 = "vSet"
 MQTT_TOPIC_07 = "stop"
 MQTT_TOPIC_08 = "start"
 MQTT_TOPIC_09 = "startEvac"
-
+MQTT_TOPIC_10 = "setpointPC"
 
 ###
 # Global variables to store the values for the bridge
@@ -58,6 +58,8 @@ setPgas1 = 0;
 setPgas2 = 0;
 setCycle = 0;
 setSetpoint = 0.0;
+
+setpointPC = 0.0;
 
 sendMsg = "";
 

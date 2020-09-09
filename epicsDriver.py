@@ -56,16 +56,24 @@ class myDriver(Driver):
 	#OTHERS
 	elif reason == 'ELEMENT.G1': value = var.elementSelectedGas1; 
 	elif reason == 'ELEMENT.G2': value = var.elementSelectedGas2;
+        elif reason == 'SETPOINT.PC': value = var.setpointPC;
 
 	else: value = self.getParam(reason)
 	return value
 
     def write(self, reason, value):
         status = True
-        if reason == 'LISTNR': var.listnr = value; var.row = str(var.dataL[value]);  #publish.single(MQTT_TOPIC_01, msgData, hostname=MQTT_SERVER);
+        if reason == 'LISTNR': 
+		var.listnr = value; var.row = str(var.dataL[value]);  #publish.single(MQTT_TOPIC_01, msgData, hostname=MQTT_SERVER);
+		temp = Json(str(var.row));
+                var.setGas1 = temp.gas1;
+                var.setGas2 = temp.gas2;
+                var.setPgas1 = temp.pgas1;
+                var.setPgas2 = temp.pgas2;
+                var.setSetpoint = temp.setpoint;
         elif reason == 'COPY' and str(var.row) != "": 
 		temp = Json(str(var.row)); 
-		var.setGas1 = temp.gas1;
+		var.setGas1 = temp.gas1; 
 		var.setGas2 = temp.gas2;
 		var.setPgas1 = temp.pgas1;
 		var.setPgas2 = temp.pgas2;
@@ -91,6 +99,7 @@ class myDriver(Driver):
 	elif reason == 'STOP': publish.single(var.MQTT_TOPIC_07, "1", hostname=var.MQTT_SERVER); 
         elif reason == 'START': publish.single(var.MQTT_TOPIC_08, "1", hostname=var.MQTT_SERVER);
         elif reason == 'STARTEVAC': publish.single(var.MQTT_TOPIC_09, "1", hostname=var.MQTT_SERVER);
+        elif reason == 'SETPOINT.PC': var.setpointPC = value;  publish.single(var.MQTT_TOPIC_10, var.setpointPC, hostname=var.MQTT_SERVER);
 
         #DATAV
         elif reason == 'V1': 

@@ -33,6 +33,7 @@ def on_connect(client, userdata, flags, rc):
     client.subscribe(var.MQTT_TOPIC_07)
     client.subscribe(var.MQTT_TOPIC_08)
     client.subscribe(var.MQTT_TOPIC_09)
+    client.subscribe(var.MQTT_TOPIC_10)
 
 # The callback for when a PUBLISH message is received from the server.
 def on_message(client, userdata, msg):
@@ -88,6 +89,8 @@ def on_message(client, userdata, msg):
     elif msg.topic == var.MQTT_TOPIC_09:
         print("START and EVACUATE process")
 
+    elif msg.topic == var.MQTT_TOPIC_10:
+        print("Set new PC setpoint")
 
     else:
         print("unknown topic: "+msg.topic)
