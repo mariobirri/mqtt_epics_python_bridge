@@ -9,6 +9,8 @@ MQTT_TOPIC_04 = "dataL"
 MQTT_TOPIC_05 = "dataSet"
 MQTT_TOPIC_06 = "vSet"
 MQTT_TOPIC_07 = "stop"
+MQTT_TOPIC_08 = "start"
+MQTT_TOPIC_09 = "startEvac"
 
 
 ###
@@ -48,6 +50,7 @@ row = "";
 listnr = 0;
 
 #DATASET
+icEntry = ['1','2','3','All'];
 setIc = 0;
 setGas1 = 0;
 setGas2 = 0;

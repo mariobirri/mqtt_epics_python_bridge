@@ -31,7 +31,8 @@ def on_connect(client, userdata, flags, rc):
     client.subscribe(var.MQTT_TOPIC_05)
     client.subscribe(var.MQTT_TOPIC_06)
     client.subscribe(var.MQTT_TOPIC_07)
-
+    client.subscribe(var.MQTT_TOPIC_08)
+    client.subscribe(var.MQTT_TOPIC_09)
 
 # The callback for when a PUBLISH message is received from the server.
 def on_message(client, userdata, msg):
@@ -81,6 +82,11 @@ def on_message(client, userdata, msg):
     elif msg.topic == var.MQTT_TOPIC_07:
         print("STOP process")
 
+    elif msg.topic == var.MQTT_TOPIC_08:
+        print("START prcess")
+
+    elif msg.topic == var.MQTT_TOPIC_09:
+        print("START and EVACUATE process")
 
 
     else:

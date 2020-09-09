@@ -89,6 +89,8 @@ class myDriver(Driver):
 		publish.single(var.MQTT_TOPIC_05, str(var.sendMsg), hostname=var.MQTT_SERVER);
 
 	elif reason == 'STOP': publish.single(var.MQTT_TOPIC_07, "1", hostname=var.MQTT_SERVER); 
+        elif reason == 'START': publish.single(var.MQTT_TOPIC_08, "1", hostname=var.MQTT_SERVER);
+        elif reason == 'STARTEVAC': publish.single(var.MQTT_TOPIC_09, "1", hostname=var.MQTT_SERVER);
 
         #DATAV
         elif reason == 'V1': 

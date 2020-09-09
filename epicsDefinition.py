@@ -21,7 +21,7 @@ pvdb = {
     'PPV' : {'type' : 'float', 'scan' : 0.2, 'prec' : 3, 'unit' : 'bar'},
 
     #DATAC
-    'IC' : {'type' : 'int','scan' : 0.2},
+    'IC' : {'type' : 'enum', 'enums' : var.icEntry}
     'GAS1' : {'type' : 'char','scan' : 0.2, 'count' : 5},
     'GAS2' : {'type' : 'char','scan' : 0.2, 'count' : 5},
     'PGAS1' : {'type' : 'float','scan' : 0.2, 'prec' : 2},
@@ -50,10 +50,14 @@ pvdb = {
     'SET.PGAS2' : {'type' : 'float','scan' : 0.2, 'prec' : 2},
     'SET.CYCLE' : {'type' : 'int','scan' : 0.2},
     'SET.SETPOINT' : {'type' : 'float','scan' : 0.2, 'prec' : 3},
+    
+    #BUTTONS
     'COPY' : {'type' : 'int','scan' : 0.2},
     'SEND' : {'type' : 'int','scan' : 0.2},
 
     'STOP' : {'type' : 'int','scan' : 0.2},
+    'START' : {'type' : 'int','scan' : 0.2},
+    'STARTEVAC' : {'type' : 'int','scan' : 0.2},
 
     #OTHER
     'ELEMENT.G1' : {'type' : 'enum', 'enums' : var.elementsArrGas1},
