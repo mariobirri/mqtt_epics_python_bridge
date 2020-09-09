@@ -33,7 +33,7 @@ pvdb = {
 
     #DATAL
     'ROW' : {'type' : 'char', 'scan' : 0.2, 'count' : 300},
-    'LISTNR' : {'type' : 'enum', 'enums' : ['0','1','2','3','4','5','6','7','8','9','10','11','12']},
+    'LISTNR' : {'type' : 'enum', 'enums' : var.listEntry},
     'DATAL.CORESPONDING' : {'type' : 'char', 'scan' : 0.2, 'count' : 20},
     'DATAL.ENERGY' : {'type' : 'char', 'scan' : 0.2, 'count' : 20},
     'DATAL.GAS1' : {'type' : 'char', 'scan' : 0.2, 'count' : 20},
