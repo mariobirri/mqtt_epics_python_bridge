@@ -21,7 +21,7 @@ pvdb = {
     'PPV' : {'type' : 'float', 'scan' : 0.2, 'prec' : 3, 'unit' : 'bar'},
 
     #DATAC
-    'IC' : {'type' : 'enum', 'enums' : var.icEntry}
+    'IC' : {'type' : 'enum', 'enums' : var.icEntry},
     'GAS1' : {'type' : 'char','scan' : 0.2, 'count' : 5},
     'GAS2' : {'type' : 'char','scan' : 0.2, 'count' : 5},
     'PGAS1' : {'type' : 'float','scan' : 0.2, 'prec' : 2},
