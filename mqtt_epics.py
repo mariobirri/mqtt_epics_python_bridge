@@ -30,7 +30,10 @@ def on_connect(client, userdata, flags, rc):
     client.subscribe(var.MQTT_TOPIC_04)
     client.subscribe(var.MQTT_TOPIC_05)
     client.subscribe(var.MQTT_TOPIC_06)
-
+    client.subscribe(var.MQTT_TOPIC_07)
+    client.subscribe(var.MQTT_TOPIC_08)
+    client.subscribe(var.MQTT_TOPIC_09)
+    client.subscribe(var.MQTT_TOPIC_10)
 
 # The callback for when a PUBLISH message is received from the server.
 def on_message(client, userdata, msg):
@@ -41,6 +44,8 @@ def on_message(client, userdata, msg):
         dataP = Json(str(msg.payload))
 	var.ppc = float(dataP.dataP.pressurePC)
         var.ppv = float(dataP.dataP.pressurePV)
+        var.sppc = float(dataP.dataP.setpointPC)
+
 
     #DATAV
     elif msg.topic == var.MQTT_TOPIC_01:
@@ -77,6 +82,17 @@ def on_message(client, userdata, msg):
     elif msg.topic == var.MQTT_TOPIC_05 or msg.topic == var.MQTT_TOPIC_06:
         print("sent data!")
 
+    elif msg.topic == var.MQTT_TOPIC_07:
+        print("STOP process")
+
+    elif msg.topic == var.MQTT_TOPIC_08:
+        print("START prcess")
+
+    elif msg.topic == var.MQTT_TOPIC_09:
+        print("START and EVACUATE process")
+
+    elif msg.topic == var.MQTT_TOPIC_10:
+        print("Set new PC setpoint")
 
     else:
         print("unknown topic: "+msg.topic)

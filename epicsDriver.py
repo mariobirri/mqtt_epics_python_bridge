@@ -21,6 +21,7 @@ class myDriver(Driver):
 	#DATAP
         elif reason == 'PPC': value = var.ppc;
         elif reason == 'PPV': value = var.ppv;
+	elif reason == 'SP.PC': value = var.sppc;
 
 	#DATAC
 	elif reason == 'IC': value = var.ic;
@@ -54,18 +55,26 @@ class myDriver(Driver):
         elif reason == 'SET.SETPOINT': value = var.setSetpoint;
 
 	#OTHERS
-	elif reason == 'ELEMENT.G1': value = var.elementSelectedGas1; print(var.elementSelectedGas1);
+	elif reason == 'ELEMENT.G1': value = var.elementSelectedGas1; 
 	elif reason == 'ELEMENT.G2': value = var.elementSelectedGas2;
+        elif reason == 'SETPOINT.PC': value = var.setpointPC;
 
 	else: value = self.getParam(reason)
 	return value
 
     def write(self, reason, value):
         status = True
-        if reason == 'LISTNR': var.listnr = value; var.row = str(var.dataL[value]);  #publish.single(MQTT_TOPIC_01, msgData, hostname=MQTT_SERVER);
+        if reason == 'LISTNR': 
+		var.listnr = value; var.row = str(var.dataL[value]);  #publish.single(MQTT_TOPIC_01, msgData, hostname=MQTT_SERVER);
+		temp = Json(str(var.row));
+                var.setGas1 = temp.gas1;
+                var.setGas2 = temp.gas2;
+                var.setPgas1 = temp.pgas1;
+                var.setPgas2 = temp.pgas2;
+                var.setSetpoint = temp.setpoint;
         elif reason == 'COPY' and str(var.row) != "": 
 		temp = Json(str(var.row)); 
-		var.setGas1 = temp.gas1;
+		var.setGas1 = temp.gas1; 
 		var.setGas2 = temp.gas2;
 		var.setPgas1 = temp.pgas1;
 		var.setPgas2 = temp.pgas2;
@@ -73,7 +82,7 @@ class myDriver(Driver):
         elif reason == 'SET.IC': var.setIc = value;
         elif reason == 'SET.GAS1': var.setGas1 = var.elementToNumber(value); #print(var.setGas1);
         elif reason == 'SET.GAS2': var.setGas2 = var.elementToNumber(value); #print(var.setGas2);
-        elif reason == 'SET.PGAS1': var.setPgas1 = value;
+        elif reason == 'SET.PGAS1': var.setPgas1 = value; var.setPgas2 = 100 - value;
         elif reason == 'SET.PGAS2': var.setPgas2 = value;
         elif reason == 'SET.CYCLE': var.setCycle = value;
         elif reason == 'SET.SETPOINT': var.setSetpoint = value;
@@ -88,7 +97,10 @@ class myDriver(Driver):
 		#print(str(var.setGas2))
 		publish.single(var.MQTT_TOPIC_05, str(var.sendMsg), hostname=var.MQTT_SERVER);
 
-	elif reason == 'STOP': var.status = false; print(var.status); 
+	elif reason == 'STOP': publish.single(var.MQTT_TOPIC_07, "1", hostname=var.MQTT_SERVER); 
+        elif reason == 'START': publish.single(var.MQTT_TOPIC_08, "1", hostname=var.MQTT_SERVER);
+        elif reason == 'STARTEVAC': publish.single(var.MQTT_TOPIC_09, "1", hostname=var.MQTT_SERVER);
+        elif reason == 'SETPOINT.PC': var.setpointPC = value;  publish.single(var.MQTT_TOPIC_10, var.setpointPC, hostname=var.MQTT_SERVER);
 
         #DATAV
         elif reason == 'V1': 
