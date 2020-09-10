@@ -29,9 +29,9 @@ V7 = 0;
 V8 = 0;
 
 #DATAP
-global ppc, ppv
 ppc = -1;
 ppv = -1;
+sppc = -1;
 
 #DATAC
 ic = 0;

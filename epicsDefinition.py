@@ -1,4 +1,4 @@
-import variables as var
+$import variables as var
 
 ###
 # Epics definitions
@@ -19,6 +19,8 @@ pvdb = {
     #DATAP
     'PPC' : {'type' : 'float', 'scan' : 0.2, 'prec' : 3, 'unit' : 'bar'},
     'PPV' : {'type' : 'float', 'scan' : 0.2, 'prec' : 3, 'unit' : 'bar'},
+    'SP.PC' : {'type' : 'float', 'scan' : 0.2, 'prec' : 3, 'unit' : 'bar'},
+
 
     #DATAC
     'IC' : {'type' : 'int','scan' : 0.2},

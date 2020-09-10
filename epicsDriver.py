@@ -21,6 +21,7 @@ class myDriver(Driver):
 	#DATAP
         elif reason == 'PPC': value = var.ppc;
         elif reason == 'PPV': value = var.ppv;
+	elif reason == 'SP.PC': value = var.sppc;
 
 	#DATAC
 	elif reason == 'IC': value = var.ic;

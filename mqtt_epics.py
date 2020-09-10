@@ -44,6 +44,8 @@ def on_message(client, userdata, msg):
         dataP = Json(str(msg.payload))
 	var.ppc = float(dataP.dataP.pressurePC)
         var.ppv = float(dataP.dataP.pressurePV)
+        var.sppc = float(dataP.dataP.setpointPC)
+
 
     #DATAV
     elif msg.topic == var.MQTT_TOPIC_01:
