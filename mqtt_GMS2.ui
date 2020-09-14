@@ -186,7 +186,7 @@
      <enum>QTabWidget::North</enum>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -982,7 +982,7 @@
        </rect>
       </property>
       <property name="filename" stdset="0">
-       <string notr="true">mqtt_epics_python_bridge/Setup_GMS.JPG</string>
+       <string notr="true">Setup_GMS.JPG</string>
       </property>
       <property name="visibility">
        <enum>caImage::StaticV</enum>
