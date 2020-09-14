@@ -1,4 +1,4 @@
-$import variables as var
+import variables as var
 
 ###
 # Epics definitions
