@@ -34,6 +34,8 @@ def on_connect(client, userdata, flags, rc):
     client.subscribe(var.MQTT_TOPIC_08)
     client.subscribe(var.MQTT_TOPIC_09)
     client.subscribe(var.MQTT_TOPIC_10)
+    client.subscribe(var.MQTT_TOPIC_11)
+    client.subscribe(var.MQTT_TOPIC_12)
 
 # The callback for when a PUBLISH message is received from the server.
 def on_message(client, userdata, msg):
@@ -78,6 +80,18 @@ def on_message(client, userdata, msg):
 	for x in range(len(dataL.dataL.pcGM)):
     		var.dataL[x] = dataL.dataL.pcGM[x]
 
+  #DATAFB
+    elif msg.topic == var.MQTT_TOPIC_11:
+        dataFB = Json(str(msg.payload))
+        var.V1FB = int(dataFB.dataFB.V1FB)
+        var.V2FB = int(dataFB.dataFB.V2FB)
+        var.V3FB = int(dataFB.dataFB.V3FB)
+        var.V4FB = int(dataFB.dataFB.V4FB)
+        var.V5FB = int(dataFB.dataFB.V5FB)
+        var.V6FB = int(dataFB.dataFB.V6FB)
+        var.V7FB = int(dataFB.dataFB.V7FB)
+        var.V8FB = int(dataFB.dataFB.V8FB)
+
     #DATASET
     elif msg.topic == var.MQTT_TOPIC_05 or msg.topic == var.MQTT_TOPIC_06:
         print("sent data!")
@@ -96,7 +110,6 @@ def on_message(client, userdata, msg):
 
     else:
         print("unknown topic: "+msg.topic)
-
 
 client = mqtt.Client()
 client.on_connect = on_connect

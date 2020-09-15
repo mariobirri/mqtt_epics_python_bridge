@@ -13,6 +13,9 @@ MQTT_TOPIC_07 = "stop"
 MQTT_TOPIC_08 = "start"
 MQTT_TOPIC_09 = "startEvac"
 MQTT_TOPIC_10 = "setpointPC"
+MQTT_TOPIC_10 = "setpointPC"
+MQTT_TOPIC_11 = "dataFB"
+MQTT_TOPIC_12 = "FBSet"
 
 ###
 # Global variables to store the values for the bridge
@@ -69,6 +72,17 @@ elementsArrGas1 = elements;
 elementsArrGas2 = elements;
 elementSelectedGas1 = 0;
 elementSelectedGas2 = 0;
+
+#dataFB
+
+V1FB = 0;
+V2FB = 0;
+V3FB = 0;
+V4FB = 0;
+V5FB = 0;
+V6FB = 0;
+V7FB = 0;
+V8FB = 0;
 
 def numberToElement(inNumber):
     global elements
