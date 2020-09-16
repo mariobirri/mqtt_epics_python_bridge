@@ -13,7 +13,6 @@ MQTT_TOPIC_07 = "stop"
 MQTT_TOPIC_08 = "start"
 MQTT_TOPIC_09 = "startEvac"
 MQTT_TOPIC_10 = "setpointPC"
-MQTT_TOPIC_10 = "setpointPC"
 MQTT_TOPIC_11 = "dataFB"
 MQTT_TOPIC_12 = "FBSet"
 
