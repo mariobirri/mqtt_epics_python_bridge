@@ -1,4 +1,4 @@
-$import variables as var
+import variables as var
 
 ###
 # Epics definitions
@@ -66,6 +66,16 @@ pvdb = {
     'ELEMENT.G2' : {'type' : 'enum', 'enums' : var.elementsArrGas2},
 
     'SETPOINT.PC' : {'type' : 'float', 'scan' : 0.2, 'prec' : 3},
+
+    #DATAFB
+    'V1FB' : {'type' : 'int', 'scan' : 0.2},
+    'V2FB' : {'type' : 'int', 'scan' : 0.2},
+    'V3FB' : {'type' : 'int', 'scan' : 0.2},
+    'V4FB' : {'type' : 'int', 'scan' : 0.2},
+    'V5FB' : {'type' : 'int', 'scan' : 0.2},
+    'V6FB' : {'type' : 'int', 'scan' : 0.2},
+    'V7FB' : {'type' : 'int', 'scan' : 0.2},
+    'V8FB' : {'type' : 'int', 'scan' : 0.2},
 
 #    'ENERGY' : {'type' : 'char','scan' : 0.2,'count' : 10},
 #    'CORESPONDING' : {'type' : 'char','scan' : 0.2,'count' : 10},

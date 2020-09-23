@@ -1,0 +1,2434 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1077</width>
+    <height>932</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="caLabel" name="calabel_3">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>60</y>
+      <width>181</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>current Settings</string>
+    </property>
+   </widget>
+   <widget class="caLabel" name="calabel_2">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>610</y>
+      <width>171</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Pressure Graph</string>
+    </property>
+   </widget>
+   <widget class="caLabel" name="calabel_6">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>100</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>IC</string>
+    </property>
+   </widget>
+   <widget class="caLabel" name="calabel_8">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>130</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>GAS1</string>
+    </property>
+   </widget>
+   <widget class="caLabel" name="calabel_9">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>160</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>GAS2</string>
+    </property>
+   </widget>
+   <widget class="caLabel" name="calabel_10">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>190</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PGAS1</string>
+    </property>
+   </widget>
+   <widget class="caLabel" name="calabel_11">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>220</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PGAS2</string>
+    </property>
+   </widget>
+   <widget class="caLineEdit" name="calineedit_5">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>100</y>
+      <width>61</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="channel" stdset="0">
+     <string notr="true">X10DA-ES-GMS:IC</string>
+    </property>
+   </widget>
+   <widget class="caLineEdit" name="calineedit_6">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>130</y>
+      <width>131</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="channel" stdset="0">
+     <string notr="true">X10DA-ES-GMS:GAS1</string>
+    </property>
+   </widget>
+   <widget class="caLineEdit" name="calineedit_7">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>160</y>
+      <width>131</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="channel" stdset="0">
+     <string notr="true">X10DA-ES-GMS:GAS2</string>
+    </property>
+   </widget>
+   <widget class="caLineEdit" name="calineedit_8">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>190</y>
+      <width>131</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="channel" stdset="0">
+     <string notr="true">X10DA-ES-GMS:PGAS1</string>
+    </property>
+   </widget>
+   <widget class="caLineEdit" name="calineedit_9">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>220</y>
+      <width>131</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="channel" stdset="0">
+     <string notr="true">X10DA-ES-GMS:PGAS2</string>
+    </property>
+   </widget>
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>0</y>
+      <width>821</width>
+      <height>601</height>
+     </rect>
+    </property>
+    <property name="contextMenuPolicy">
+     <enum>Qt::DefaultContextMenu</enum>
+    </property>
+    <property name="tabPosition">
+     <enum>QTabWidget::North</enum>
+    </property>
+    <property name="currentIndex">
+     <number>3</number>
+    </property>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>GMS User Mode</string>
+     </attribute>
+     <widget class="caMenu" name="camenu">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>60</y>
+        <width>361</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="editable">
+       <bool>false</bool>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:LISTNR</string>
+      </property>
+      <property name="channelMask" stdset="0">
+       <string notr="true"/>
+      </property>
+      <property name="labelDisplay">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="caLabel" name="calabel_12">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>181</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Choose Gasmix</string>
+      </property>
+     </widget>
+     <widget class="caMessageButton" name="camessagebutton_2">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>230</y>
+        <width>191</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Send Data</string>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:SEND</string>
+      </property>
+      <property name="releaseMessage">
+       <string notr="true">0</string>
+      </property>
+      <property name="pressMessage">
+       <string notr="true">1</string>
+      </property>
+     </widget>
+     <widget class="caLabel" name="calabel_27">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>110</y>
+        <width>81</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Cycle Nr.</string>
+      </property>
+     </widget>
+     <widget class="caTextEntry" name="catextentry_7">
+      <property name="geometry">
+       <rect>
+        <x>520</x>
+        <y>110</y>
+        <width>91</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:SET.CYCLE</string>
+      </property>
+      <property name="limitsMode">
+       <enum>caLineEdit::User</enum>
+      </property>
+      <property name="maxValue">
+       <double>30.000000000000000</double>
+      </property>
+      <property name="minValue">
+       <double>1.000000000000000</double>
+      </property>
+     </widget>
+     <widget class="caMessageButton" name="camessagebutton_3">
+      <property name="geometry">
+       <rect>
+        <x>520</x>
+        <y>260</y>
+        <width>91</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>STOP</string>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:STOP</string>
+      </property>
+      <property name="foreground">
+       <color>
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </property>
+      <property name="background">
+       <color>
+        <red>255</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </property>
+      <property name="disabledForeground">
+       <color>
+        <red>170</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </property>
+      <property name="releaseMessage">
+       <string notr="true">0</string>
+      </property>
+      <property name="pressMessage">
+       <string notr="true">1</string>
+      </property>
+     </widget>
+     <widget class="caLabel" name="calabel_20">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>200</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Gas 2</string>
+      </property>
+     </widget>
+     <widget class="caLabel" name="calabel_17">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>110</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Coresponing Element</string>
+      </property>
+     </widget>
+     <widget class="caLabel" name="calabel_19">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>170</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Gas 1</string>
+      </property>
+     </widget>
+     <widget class="caLabel" name="calabel_18">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>140</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Energy</string>
+      </property>
+     </widget>
+     <widget class="caMenu" name="camenu_4">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>60</y>
+        <width>151</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="editable">
+       <bool>false</bool>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:SET.IC</string>
+      </property>
+      <property name="channelMask" stdset="0">
+       <string notr="true"/>
+      </property>
+      <property name="labelDisplay">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="caMessageButton" name="camessagebutton_4">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>260</y>
+        <width>91</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>START</string>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:START</string>
+      </property>
+      <property name="background">
+       <color>
+        <red>85</red>
+        <green>255</green>
+        <blue>0</blue>
+       </color>
+      </property>
+      <property name="releaseMessage">
+       <string notr="true">0</string>
+      </property>
+      <property name="pressMessage">
+       <string notr="true">1</string>
+      </property>
+     </widget>
+     <widget class="caLabel" name="calabel_31">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>140</y>
+        <width>261</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="acceptDrops">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string>Note: if the cycle nr. is greater than 1, </string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::PlainText</enum>
+      </property>
+     </widget>
+     <widget class="caLabel" name="calabel_38">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>160</y>
+        <width>221</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>the cycles before the last will fill N2</string>
+      </property>
+     </widget>
+     <widget class="caLabel" name="calabel_34">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>70</y>
+        <width>31</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>IC</string>
+      </property>
+     </widget>
+     <widget class="caLineEdit" name="calineedit_27">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>260</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:DATAL.PGAS2</string>
+      </property>
+     </widget>
+     <widget class="caLineEdit" name="calineedit_28">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>230</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:DATAL.PGAS1</string>
+      </property>
+     </widget>
+     <widget class="caLineEdit" name="calineedit_29">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>200</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:DATAL.GAS2</string>
+      </property>
+     </widget>
+     <widget class="caLineEdit" name="calineedit_30">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>170</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:DATAL.GAS1</string>
+      </property>
+     </widget>
+     <widget class="caLabel" name="calabel_47">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>230</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Procent Gas 1</string>
+      </property>
+     </widget>
+     <widget class="caLabel" name="calabel_48">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>260</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Procent Gas 2</string>
+      </property>
+     </widget>
+     <widget class="caLineEdit" name="calineedit_31">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>140</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:DATAL.ENERGY</string>
+      </property>
+     </widget>
+     <widget class="caLineEdit" name="calineedit_32">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>110</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:DATAL.CORESPONDING</string>
+      </property>
+     </widget>
+     <widget class="caLabel" name="calabel_51">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>290</y>
+        <width>161</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Setpoint</string>
+      </property>
+     </widget>
+     <widget class="caLineEdit" name="calineedit_33">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>290</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:DATAL.SOLLWERT</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>GMS Pro Mode</string>
+     </attribute>
+     <widget class="caLabel" name="calabel_25">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>50</y>
+        <width>61</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Gas 1</string>
+      </property>
+     </widget>
+     <widget class="caLabel" name="calabel_29">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>110</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Procent Gas 1</string>
+      </property>
+     </widget>
+     <widget class="caCalc" name="cacalc">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>140</y>
+        <width>201</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+      <property name="background">
+       <color>
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </property>
+      <property name="calc">
+       <string notr="true">100-B</string>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:SET.PGAS2</string>
+      </property>
+      <property name="channelB">
+       <string notr="true">X10DA-ES-GMS:SET.PGAS1</string>
+      </property>
+     </widget>
+     <widget class="caTextEntry" name="catextentry_5">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>110</y>
+        <width>201</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:SET.PGAS1</string>
+      </property>
+     </widget>
+     <widget class="caLineEdit" name="calineedit_22">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>50</y>
+        <width>91</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:SET.GAS1</string>
+      </property>
+     </widget>
+     <widget class="caMenu" name="camenu_2">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>50</y>
+        <width>101</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="editable">
+       <bool>false</bool>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:ELEMENT.G1</string>
+      </property>
+      <property name="channelMask" stdset="0">
+       <string notr="true"/>
+      </property>
+      <property name="labelDisplay">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="caLineEdit" name="calineedit_23">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>80</y>
+        <width>91</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:SET.GAS2</string>
+      </property>
+     </widget>
+     <widget class="caLabel" name="calabel_26">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>80</y>
+        <width>61</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Gas 2</string>
+      </property>
+     </widget>
+     <widget class="caLabel" name="calabel_30">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>140</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Procent Gas 2</string>
+      </property>
+     </widget>
+     <widget class="caMenu" name="camenu_3">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>80</y>
+        <width>101</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="editable">
+       <bool>false</bool>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:ELEMENT.G2</string>
+      </property>
+      <property name="channelMask" stdset="0">
+       <string notr="true"/>
+      </property>
+      <property name="labelDisplay">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="caLabel" name="calabel_28">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>170</y>
+        <width>161</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Pressure set value</string>
+      </property>
+     </widget>
+     <widget class="caTextEntry" name="catextentry_8">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>170</y>
+        <width>201</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:SET.SETPOINT</string>
+      </property>
+      <property name="limitsMode">
+       <enum>caLineEdit::User</enum>
+      </property>
+      <property name="maxValue">
+       <double>3.000000000000000</double>
+      </property>
+      <property name="minValue">
+       <double>0.150000000000000</double>
+      </property>
+     </widget>
+     <widget class="caMessageButton" name="camessagebutton_5">
+      <property name="geometry">
+       <rect>
+        <x>450</x>
+        <y>100</y>
+        <width>121</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Start evacuate</string>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:STARTEVAC</string>
+      </property>
+      <property name="background">
+       <color>
+        <red>85</red>
+        <green>255</green>
+        <blue>0</blue>
+       </color>
+      </property>
+      <property name="releaseMessage">
+       <string notr="true">0</string>
+      </property>
+      <property name="pressMessage">
+       <string notr="true">1</string>
+      </property>
+     </widget>
+     <widget class="caMessageButton" name="camessagebutton_6">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>200</y>
+        <width>201</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Send Data</string>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:SEND</string>
+      </property>
+      <property name="releaseMessage">
+       <string notr="true">0</string>
+      </property>
+      <property name="pressMessage">
+       <string notr="true">1</string>
+      </property>
+     </widget>
+     <widget class="caMessageButton" name="camessagebutton_7">
+      <property name="geometry">
+       <rect>
+        <x>580</x>
+        <y>100</y>
+        <width>91</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>STOP</string>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:STOP</string>
+      </property>
+      <property name="foreground">
+       <color>
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </property>
+      <property name="background">
+       <color>
+        <red>255</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </property>
+      <property name="disabledForeground">
+       <color>
+        <red>170</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </property>
+      <property name="releaseMessage">
+       <string notr="true">0</string>
+      </property>
+      <property name="pressMessage">
+       <string notr="true">1</string>
+      </property>
+     </widget>
+     <widget class="caLabel" name="calabel_46">
+      <property name="geometry">
+       <rect>
+        <x>470</x>
+        <y>60</y>
+        <width>31</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>IC</string>
+      </property>
+     </widget>
+     <widget class="caMenu" name="camenu_5">
+      <property name="geometry">
+       <rect>
+        <x>520</x>
+        <y>50</y>
+        <width>151</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="editable">
+       <bool>false</bool>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:SET.IC</string>
+      </property>
+      <property name="channelMask" stdset="0">
+       <string notr="true"/>
+      </property>
+      <property name="labelDisplay">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="caLabel" name="calabel_21">
+      <property name="geometry">
+       <rect>
+        <x>440</x>
+        <y>10</y>
+        <width>171</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>only evacuate</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_3">
+     <attribute name="title">
+      <string>GMS Setup</string>
+     </attribute>
+     <widget class="caImage" name="caimage">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>40</y>
+        <width>801</width>
+        <height>581</height>
+       </rect>
+      </property>
+      <property name="filename" stdset="0">
+       <string notr="true">Setup_GMS.JPG</string>
+      </property>
+      <property name="visibility">
+       <enum>caImage::StaticV</enum>
+      </property>
+     </widget>
+     <widget class="caLed" name="caled_2">
+      <property name="geometry">
+       <rect>
+        <x>212</x>
+        <y>50</y>
+        <width>41</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:V1</string>
+      </property>
+     </widget>
+     <widget class="caToggleButton" name="catogglebutton">
+      <property name="geometry">
+       <rect>
+        <x>225</x>
+        <y>108</y>
+        <width>61</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>V1</string>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>16</width>
+        <height>16</height>
+       </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:V1</string>
+      </property>
+      <property name="trueValue">
+       <string>1</string>
+      </property>
+      <property name="falseValue">
+       <string>0</string>
+      </property>
+     </widget>
+     <widget class="caToggleButton" name="catogglebutton_3">
+      <property name="geometry">
+       <rect>
+        <x>225</x>
+        <y>308</y>
+        <width>61</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>V3</string>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>16</width>
+        <height>16</height>
+       </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:V3</string>
+      </property>
+      <property name="trueValue">
+       <string>1</string>
+      </property>
+      <property name="falseValue">
+       <string>0</string>
+      </property>
+     </widget>
+     <widget class="caLed" name="caled_4">
+      <property name="geometry">
+       <rect>
+        <x>222</x>
+        <y>250</y>
+        <width>21</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:V3</string>
+      </property>
+     </widget>
+     <widget class="caLed" name="caled_3">
+      <property name="geometry">
+       <rect>
+        <x>212</x>
+        <y>150</y>
+        <width>41</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:V2</string>
+      </property>
+     </widget>
+     <widget class="caToggleButton" name="catogglebutton_2">
+      <property name="geometry">
+       <rect>
+        <x>226</x>
+        <y>207</y>
+        <width>61</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>V2</string>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>16</width>
+        <height>16</height>
+       </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:V2</string>
+      </property>
+      <property name="trueValue">
+       <string>1</string>
+      </property>
+      <property name="falseValue">
+       <string>0</string>
+      </property>
+     </widget>
+     <widget class="caLed" name="caled_5">
+      <property name="geometry">
+       <rect>
+        <x>212</x>
+        <y>360</y>
+        <width>41</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:V4</string>
+      </property>
+     </widget>
+     <widget class="caToggleButton" name="catogglebutton_4">
+      <property name="geometry">
+       <rect>
+        <x>225</x>
+        <y>403</y>
+        <width>61</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>V4</string>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>16</width>
+        <height>16</height>
+       </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:V4</string>
+      </property>
+     </widget>
+     <widget class="caLed" name="caled_6">
+      <property name="geometry">
+       <rect>
+        <x>553</x>
+        <y>100</y>
+        <width>30</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:V5</string>
+      </property>
+     </widget>
+     <widget class="caToggleButton" name="catogglebutton_7">
+      <property name="geometry">
+       <rect>
+        <x>561</x>
+        <y>146</y>
+        <width>61</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>V5</string>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>16</width>
+        <height>16</height>
+       </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:V5</string>
+      </property>
+     </widget>
+     <widget class="caToggleButton" name="catogglebutton_8">
+      <property name="geometry">
+       <rect>
+        <x>560</x>
+        <y>270</y>
+        <width>61</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>V6</string>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>16</width>
+        <height>16</height>
+       </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:V6</string>
+      </property>
+     </widget>
+     <widget class="caLed" name="caled_7">
+      <property name="geometry">
+       <rect>
+        <x>553</x>
+        <y>220</y>
+        <width>31</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:V6</string>
+      </property>
+     </widget>
+     <widget class="caToggleButton" name="catogglebutton_5">
+      <property name="geometry">
+       <rect>
+        <x>561</x>
+        <y>398</y>
+        <width>61</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>V7</string>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>16</width>
+        <height>16</height>
+       </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:V7</string>
+      </property>
+     </widget>
+     <widget class="caLed" name="caled_8">
+      <property name="geometry">
+       <rect>
+        <x>553</x>
+        <y>341</y>
+        <width>31</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:V7</string>
+      </property>
+     </widget>
+     <widget class="caLed" name="caled_9">
+      <property name="geometry">
+       <rect>
+        <x>326</x>
+        <y>483</y>
+        <width>30</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:V8</string>
+      </property>
+     </widget>
+     <widget class="caToggleButton" name="catogglebutton_6">
+      <property name="geometry">
+       <rect>
+        <x>335</x>
+        <y>529</y>
+        <width>61</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>V8</string>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>16</width>
+        <height>16</height>
+       </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:V8</string>
+      </property>
+     </widget>
+     <widget class="caLed" name="caled_10">
+      <property name="geometry">
+       <rect>
+        <x>223</x>
+        <y>498</y>
+        <width>30</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:V8</string>
+      </property>
+     </widget>
+     <widget class="caLabel" name="calabel_33">
+      <property name="geometry">
+       <rect>
+        <x>340</x>
+        <y>310</y>
+        <width>81</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Setpoint </string>
+      </property>
+     </widget>
+     <widget class="caTextEntry" name="catextentry_10">
+      <property name="geometry">
+       <rect>
+        <x>340</x>
+        <y>330</y>
+        <width>71</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:SETPOINT.PC</string>
+      </property>
+      <property name="limitsMode">
+       <enum>caLineEdit::User</enum>
+      </property>
+      <property name="maxValue">
+       <double>3.000000000000000</double>
+      </property>
+      <property name="minValue">
+       <double>0.150000000000000</double>
+      </property>
+     </widget>
+     <widget class="caLineEdit" name="calineedit_24">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>370</y>
+        <width>91</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:SP.PC</string>
+      </property>
+     </widget>
+     <widget class="caLabel" name="calabel_32">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>200</y>
+        <width>201</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Pressure Controller</string>
+      </property>
+     </widget>
+     <widget class="caLineEdit" name="calineedit_14">
+      <property name="geometry">
+       <rect>
+        <x>331</x>
+        <y>80</y>
+        <width>51</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:PPC</string>
+      </property>
+     </widget>
+     <widget class="caLineEdit" name="calineedit_25">
+      <property name="geometry">
+       <rect>
+        <x>527</x>
+        <y>499</y>
+        <width>51</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:PPV</string>
+      </property>
+     </widget>
+     <widget class="caLabel" name="calabel_43">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>10</y>
+        <width>101</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Warning:</string>
+      </property>
+      <property name="foreground">
+       <color>
+        <red>255</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </property>
+     </widget>
+     <widget class="caLabel" name="calabel_44">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>40</y>
+        <width>651</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Don't make any changes, unless you are fully aware of the consecuences !!!</string>
+      </property>
+      <property name="foreground">
+       <color>
+        <red>255</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </property>
+     </widget>
+     <widget class="caLabel" name="calabel_49">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>330</y>
+        <width>41</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>bar(a)</string>
+      </property>
+     </widget>
+     <widget class="caLabel" name="calabel_53">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>370</y>
+        <width>41</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>bar(a)</string>
+      </property>
+     </widget>
+     <widget class="caLabel" name="calabel_45">
+      <property name="geometry">
+       <rect>
+        <x>305</x>
+        <y>330</y>
+        <width>31</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>set:</string>
+      </property>
+     </widget>
+     <widget class="caLabel" name="calabel_54">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>70</y>
+        <width>41</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>bar(a)</string>
+      </property>
+     </widget>
+     <widget class="caLabel" name="calabel_50">
+      <property name="geometry">
+       <rect>
+        <x>580</x>
+        <y>500</y>
+        <width>41</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>bar(a)</string>
+      </property>
+     </widget>
+     <widget class="caLabel" name="calabel_59">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>550</y>
+        <width>131</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="acceptDrops">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string>Note: The V8 and the </string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::PlainText</enum>
+      </property>
+     </widget>
+     <widget class="caLabel" name="calabel_60">
+      <property name="geometry">
+       <rect>
+        <x>322</x>
+        <y>560</y>
+        <width>201</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="acceptDrops">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string>vacuum pump are interconnected.</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::PlainText</enum>
+      </property>
+     </widget>
+     <widget class="caLabel" name="calabel_22">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>181</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Manual Control</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_4">
+     <attribute name="title">
+      <string>User Manual</string>
+     </attribute>
+     <widget class="caImage" name="caimage_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>801</width>
+        <height>561</height>
+       </rect>
+      </property>
+      <property name="filename" stdset="0">
+       <string notr="true">Usermanual.JPG</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_5">
+     <attribute name="title">
+      <string>Filter Box</string>
+     </attribute>
+     <widget class="caLed" name="caled_12">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>230</y>
+        <width>30</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:V7FB</string>
+      </property>
+     </widget>
+     <widget class="caToggleButton" name="catogglebutton_9">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>235</y>
+        <width>61</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>V7</string>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>16</width>
+        <height>16</height>
+       </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:V7FB</string>
+      </property>
+     </widget>
+     <widget class="caToggleButton" name="catogglebutton_10">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>175</y>
+        <width>61</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>V5</string>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>16</width>
+        <height>16</height>
+       </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:V5FB</string>
+      </property>
+     </widget>
+     <widget class="caLed" name="caled_13">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>140</y>
+        <width>30</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:V4FB</string>
+      </property>
+     </widget>
+     <widget class="caLed" name="caled_14">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>110</y>
+        <width>30</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:V3FB</string>
+      </property>
+     </widget>
+     <widget class="caToggleButton" name="catogglebutton_11">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>264</y>
+        <width>61</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>V8</string>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>16</width>
+        <height>16</height>
+       </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:V8FB</string>
+      </property>
+     </widget>
+     <widget class="caLed" name="caled_15">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>260</y>
+        <width>30</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:V8FB</string>
+      </property>
+     </widget>
+     <widget class="caToggleButton" name="catogglebutton_12">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>55</y>
+        <width>61</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>V1</string>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>16</width>
+        <height>16</height>
+       </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:V1FB</string>
+      </property>
+      <property name="trueValue">
+       <string>1</string>
+      </property>
+      <property name="falseValue">
+       <string>0</string>
+      </property>
+     </widget>
+     <widget class="caToggleButton" name="catogglebutton_13">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>204</y>
+        <width>61</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>V6</string>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>16</width>
+        <height>16</height>
+       </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:V6FB</string>
+      </property>
+     </widget>
+     <widget class="caToggleButton" name="catogglebutton_14">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>84</y>
+        <width>61</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>V2</string>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>16</width>
+        <height>16</height>
+       </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:V2FB</string>
+      </property>
+      <property name="trueValue">
+       <string>1</string>
+      </property>
+      <property name="falseValue">
+       <string>0</string>
+      </property>
+     </widget>
+     <widget class="caToggleButton" name="catogglebutton_15">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>144</y>
+        <width>61</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>V4</string>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>16</width>
+        <height>16</height>
+       </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:V4FB</string>
+      </property>
+     </widget>
+     <widget class="caLed" name="caled_16">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>170</y>
+        <width>30</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:V5FB</string>
+      </property>
+     </widget>
+     <widget class="caLed" name="caled_17">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>50</y>
+        <width>30</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:V1FB</string>
+      </property>
+     </widget>
+     <widget class="caLed" name="caled_18">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>80</y>
+        <width>30</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:V2FB</string>
+      </property>
+     </widget>
+     <widget class="caLed" name="caled_19">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>200</y>
+        <width>30</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:V6FB</string>
+      </property>
+     </widget>
+     <widget class="caToggleButton" name="catogglebutton_16">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>114</y>
+        <width>61</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>V3</string>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>16</width>
+        <height>16</height>
+       </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">X10DA-ES-GMS:V3FB</string>
+      </property>
+      <property name="trueValue">
+       <string>1</string>
+      </property>
+      <property name="falseValue">
+       <string>0</string>
+      </property>
+     </widget>
+     <widget class="caLabel" name="calabel_7">
+      <property name="geometry">
+       <rect>
+        <x>-40</x>
+        <y>10</y>
+        <width>171</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Filter Box</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="caLineEdit" name="calineedit_10">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>340</y>
+      <width>51</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="channel" stdset="0">
+     <string notr="true">X10DA-ES-GMS:CYCLE</string>
+    </property>
+   </widget>
+   <widget class="caLabel" name="calabel_16">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>340</y>
+      <width>61</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>CYCLES</string>
+    </property>
+   </widget>
+   <widget class="caLabel" name="calabel_15">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>320</y>
+      <width>51</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>current:</string>
+    </property>
+   </widget>
+   <widget class="caLabel" name="calabel_14">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>280</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>SETPOINT</string>
+    </property>
+   </widget>
+   <widget class="caLineEdit" name="calineedit_11">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>340</y>
+      <width>51</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="channel" stdset="0">
+     <string notr="true">X10DA-ES-GMS:ACTCYCLE</string>
+    </property>
+   </widget>
+   <widget class="caLabel" name="calabel_13">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>376</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>STATUS</string>
+    </property>
+   </widget>
+   <widget class="caLineEdit" name="calineedit_13">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>280</y>
+      <width>131</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="channel" stdset="0">
+     <string notr="true">X10DA-ES-GMS:SETPOINT</string>
+    </property>
+   </widget>
+   <widget class="caLabel" name="calabel_35">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>340</y>
+      <width>20</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>/</string>
+    </property>
+   </widget>
+   <widget class="caLabel" name="calabel_36">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>320</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>nr.:</string>
+    </property>
+   </widget>
+   <widget class="caStripPlot" name="castripplot">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>640</y>
+      <width>441</width>
+      <height>271</height>
+     </rect>
+    </property>
+    <property name="TitleX">
+     <string notr="true">time</string>
+    </property>
+    <property name="TitleY">
+     <string notr="true">pressure [bar(a)]</string>
+    </property>
+    <property name="channels" stdset="0">
+     <string>X10DA-ES-GMS:PPC;X10DA-ES-GMS:PPV;X10DA-ES-GMS:SP.PC</string>
+    </property>
+    <property name="period">
+     <double>180.000000000000000</double>
+    </property>
+    <property name="YAxisScaling" stdset="0">
+     <enum>caStripPlot::autoScale</enum>
+    </property>
+    <property name="YaxisLimitsMax_1">
+     <double>4.000000000000000</double>
+    </property>
+    <property name="YaxisLimitsMax_2">
+     <double>4.000000000000000</double>
+    </property>
+    <property name="YaxisScalingMax_2" stdset="0">
+     <enum>caStripPlot::User</enum>
+    </property>
+    <property name="YaxisScalingMin_2" stdset="0">
+     <enum>caStripPlot::User</enum>
+    </property>
+    <property name="YaxisLimitsMax_3">
+     <double>4.000000000000000</double>
+    </property>
+    <property name="YaxisScalingMax_3" stdset="0">
+     <enum>caStripPlot::User</enum>
+    </property>
+    <property name="YaxisScalingMin_3" stdset="0">
+     <enum>caStripPlot::User</enum>
+    </property>
+    <property name="YaxisLimitsMax_4">
+     <double>4.000000000000000</double>
+    </property>
+    <property name="YaxisScalingMax_4" stdset="0">
+     <enum>caStripPlot::User</enum>
+    </property>
+    <property name="YaxisScalingMin_4" stdset="0">
+     <enum>caStripPlot::User</enum>
+    </property>
+    <property name="YaxisLimitsMax_5">
+     <double>4.000000000000000</double>
+    </property>
+    <property name="YaxisScalingMax_5" stdset="0">
+     <enum>caStripPlot::User</enum>
+    </property>
+    <property name="YaxisScalingMin_5" stdset="0">
+     <enum>caStripPlot::User</enum>
+    </property>
+   </widget>
+   <widget class="caLabel" name="calabel_37">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>100</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="acceptDrops">
+     <bool>false</bool>
+    </property>
+    <property name="text">
+     <string>(4 = all)</string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::PlainText</enum>
+    </property>
+   </widget>
+   <widget class="QSplitter" name="splitter">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>640</y>
+      <width>191</width>
+      <height>251</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+    <widget class="QWidget" name="layoutWidget">
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="caLabel" name="calabel_5">
+        <property name="text">
+         <string>Pressure Controller</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="caLabel" name="calabel_39">
+        <property name="text">
+         <string>(X10DA-ES-GMS:PPC)</string>
+        </property>
+        <property name="foreground">
+         <color>
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </property>
+        <property name="borderColor">
+         <color>
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="caCircularGauge" name="cacirculargauge">
+     <property name="minValue">
+      <double>0.000000000000000</double>
+     </property>
+     <property name="maxValue">
+      <double>4.000000000000000</double>
+     </property>
+     <property name="displayLimits">
+      <enum>EAbstractGauge::User_Limits</enum>
+     </property>
+     <property name="highError">
+      <double>3.800000000000000</double>
+     </property>
+     <property name="lowError">
+      <double>0.200000000000000</double>
+     </property>
+     <property name="lowWarning">
+      <double>0.500000000000000</double>
+     </property>
+     <property name="highWarning">
+      <double>3.500000000000000</double>
+     </property>
+     <property name="alarmLimits">
+      <enum>EAbstractGauge::User_Alarms</enum>
+     </property>
+     <property name="valueFormat">
+      <string>%.3f</string>
+     </property>
+     <property name="numMajorTicks">
+      <number>5</number>
+     </property>
+     <property name="channel" stdset="0">
+      <string notr="true">X10DA-ES-GMS:PPC</string>
+     </property>
+     <property name="label">
+      <string notr="true">bar(a)</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QSplitter" name="splitter_2">
+    <property name="geometry">
+     <rect>
+      <x>670</x>
+      <y>640</y>
+      <width>181</width>
+      <height>251</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+    <widget class="QWidget" name="layoutWidget">
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="caLabel" name="calabel_4">
+        <property name="text">
+         <string>Pressure Vacuumpump</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="caLabel" name="calabel_40">
+        <property name="text">
+         <string>(X10DA-ES-GMS:PPV)</string>
+        </property>
+        <property name="foreground">
+         <color>
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="caCircularGauge" name="cacirculargauge_2">
+     <property name="minValue">
+      <double>0.000000000000000</double>
+     </property>
+     <property name="maxValue">
+      <double>4.000000000000000</double>
+     </property>
+     <property name="displayLimits">
+      <enum>EAbstractGauge::User_Limits</enum>
+     </property>
+     <property name="highError">
+      <double>3.800000000000000</double>
+     </property>
+     <property name="lowError">
+      <double>0.200000000000000</double>
+     </property>
+     <property name="lowWarning">
+      <double>0.500000000000000</double>
+     </property>
+     <property name="highWarning">
+      <double>3.500000000000000</double>
+     </property>
+     <property name="alarmLimits">
+      <enum>EAbstractGauge::User_Alarms</enum>
+     </property>
+     <property name="valueFormat">
+      <string>%.3f</string>
+     </property>
+     <property name="numMajorTicks">
+      <number>5</number>
+     </property>
+     <property name="numMinorTicks">
+      <number>5</number>
+     </property>
+     <property name="channel" stdset="0">
+      <string notr="true">X10DA-ES-GMS:PPV</string>
+     </property>
+     <property name="label">
+      <string notr="true">bar(a)</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="caLed" name="caled_11">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>370</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="channel" stdset="0">
+     <string notr="true">X10DA-ES-GMS:STATUS</string>
+    </property>
+   </widget>
+   <widget class="caLabel" name="calabel_41">
+    <property name="geometry">
+     <rect>
+      <x>860</x>
+      <y>640</y>
+      <width>211</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Setpoint Pressure Controller</string>
+    </property>
+   </widget>
+   <widget class="caLabel" name="calabel_42">
+    <property name="geometry">
+     <rect>
+      <x>860</x>
+      <y>670</y>
+      <width>191</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>(X10DA-ES-GMS:SP.PC)</string>
+    </property>
+    <property name="foreground">
+     <color>
+      <red>0</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="caLineEdit" name="calineedit_26">
+    <property name="geometry">
+     <rect>
+      <x>870</x>
+      <y>710</y>
+      <width>151</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="channel" stdset="0">
+     <string notr="true">X10DA-ES-GMS:SP.PC</string>
+    </property>
+   </widget>
+   <zorder>calabel_41</zorder>
+   <zorder>calabel_42</zorder>
+   <zorder>calineedit_26</zorder>
+   <zorder>splitter</zorder>
+   <zorder>splitter_2</zorder>
+   <zorder>calabel_3</zorder>
+   <zorder>calabel_2</zorder>
+   <zorder>calabel_6</zorder>
+   <zorder>calabel_8</zorder>
+   <zorder>calabel_9</zorder>
+   <zorder>calabel_10</zorder>
+   <zorder>calabel_11</zorder>
+   <zorder>calineedit_5</zorder>
+   <zorder>calineedit_6</zorder>
+   <zorder>calineedit_7</zorder>
+   <zorder>calineedit_8</zorder>
+   <zorder>calineedit_9</zorder>
+   <zorder>tabWidget</zorder>
+   <zorder>calineedit_10</zorder>
+   <zorder>calabel_16</zorder>
+   <zorder>calabel_15</zorder>
+   <zorder>calabel_14</zorder>
+   <zorder>calineedit_11</zorder>
+   <zorder>calabel_13</zorder>
+   <zorder>calineedit_13</zorder>
+   <zorder>calabel_35</zorder>
+   <zorder>calabel_36</zorder>
+   <zorder>castripplot</zorder>
+   <zorder>calabel_37</zorder>
+   <zorder>caled_11</zorder>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QwtPlot</class>
+   <extends>QFrame</extends>
+   <header>qwt_plot.h</header>
+  </customwidget>
+  <customwidget>
+   <class>caMenu</class>
+   <extends>QComboBox</extends>
+   <header>caMenu</header>
+  </customwidget>
+  <customwidget>
+   <class>caTextEntry</class>
+   <extends>caLineEdit</extends>
+   <header>caTextEntry</header>
+  </customwidget>
+  <customwidget>
+   <class>caMessageButton</class>
+   <extends>QPushButton</extends>
+   <header>caMessageButton</header>
+  </customwidget>
+  <customwidget>
+   <class>caToggleButton</class>
+   <extends>QCheckBox</extends>
+   <header>caToggleButton</header>
+  </customwidget>
+  <customwidget>
+   <class>caLabel</class>
+   <extends>QLabel</extends>
+   <header>caLabel</header>
+  </customwidget>
+  <customwidget>
+   <class>caImage</class>
+   <extends>QWidget</extends>
+   <header>caImage</header>
+  </customwidget>
+  <customwidget>
+   <class>caLed</class>
+   <extends>QWidget</extends>
+   <header>caLed</header>
+  </customwidget>
+  <customwidget>
+   <class>caCircularGauge</class>
+   <extends>QWidget</extends>
+   <header>caGauge</header>
+  </customwidget>
+  <customwidget>
+   <class>caLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>caLineEdit</header>
+  </customwidget>
+  <customwidget>
+   <class>caStripPlot</class>
+   <extends>QwtPlot</extends>
+   <header>caStripPlot</header>
+  </customwidget>
+  <customwidget>
+   <class>caCalc</class>
+   <extends>QLabel</extends>
+   <header>caCalc</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

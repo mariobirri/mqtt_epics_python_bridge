@@ -1,0 +1,2 @@
+listEntry = ['Nr.1: TI,V (5.0keV)','Nr.2: Ce,Cr (5.8keV)','Nr.3: Mn (6.5keV)','Nr.4: Fe (7.1keV)','Nr.5: Co (7.8keV)','Nr.6: Ni, Cu (8.3keV)','Nr.7: Zn, Ga (9keV)','Nr.8: Ir, Pt, Au (11.6keV)','Nr.9: Sr, Y, Zr (16.2keV)','Nr.10:  Nb, Mo (19keV)','Nr.11: Ru, Rh, Pd (24keV)','Nr.12: Ag, Cd (26keV)','Nr.13: Sn (29keV)'];
+print listEntry;

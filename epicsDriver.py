@@ -54,6 +54,17 @@ class myDriver(Driver):
         elif reason == 'SET.CYCLE': value = var.setCycle;
         elif reason == 'SET.SETPOINT': value = var.setSetpoint;
 
+	#DATAFB
+        elif reason == 'V1FB': value = var.V1FB;
+        elif reason == 'V2FB': value = var.V2FB;
+        elif reason == 'V3FB': value = var.V3FB;
+        elif reason == 'V4FB': value = var.V4FB;
+        elif reason == 'V5FB': value = var.V5FB;
+        elif reason == 'V6FB': value = var.V6FB;
+        elif reason == 'V7FB': value = var.V7FB;
+        elif reason == 'V8FB': value = var.V8FB;
+
+
 	#OTHERS
 	elif reason == 'ELEMENT.G1': value = var.elementSelectedGas1; 
 	elif reason == 'ELEMENT.G2': value = var.elementSelectedGas2;
@@ -61,6 +72,7 @@ class myDriver(Driver):
 
 	else: value = self.getParam(reason)
 	return value
+
 
     def write(self, reason, value):
         status = True
@@ -102,12 +114,12 @@ class myDriver(Driver):
         elif reason == 'STARTEVAC': publish.single(var.MQTT_TOPIC_09, "1", hostname=var.MQTT_SERVER);
         elif reason == 'SETPOINT.PC': var.setpointPC = value;  publish.single(var.MQTT_TOPIC_10, var.setpointPC, hostname=var.MQTT_SERVER);
 
-        #DATAV
-        elif reason == 'V1': 
-		var.V1 = value;
-		msg = Json(('V1',var.V1),('V2',var.V2),('V3',var.V3),('V4',var.V4),('V5',var.V5),('V6',var.V6),('V7',var.V7),('V8',var.V8));
-                publish.single(var.MQTT_TOPIC_06, str(msg), hostname=var.MQTT_SERVER);
-        elif reason == 'V2': 
+         #DATAV
+        elif reason == 'V1':
+                var.V1 = value;
+                msg = Json(('V1',var.V1),('V2',var.V2),('V3',var.V3),('V4',var.V4),('V5',var.V5),('V6',var.V6),('V7',var.V7),('V8',var.V8));
+                publish.single(var.MQTT_TOPIC_06, str(msg), hostname=var.MQTT_SERVER)
+	elif reason == 'V2': 
 		var.V2 = value; 
 		msg = Json(('V1',var.V1),('V2',var.V2),('V3',var.V3),('V4',var.V4),('V5',var.V5),('V6',var.V6),('V7',var.V7),('V8',var.V8));
                 publish.single(var.MQTT_TOPIC_06, str(msg), hostname=var.MQTT_SERVER);
@@ -135,6 +147,40 @@ class myDriver(Driver):
 		var.V8 = value;
 		msg = Json(('V1',var.V1),('V2',var.V2),('V3',var.V3),('V4',var.V4),('V5',var.V5),('V6',var.V6),('V7',var.V7),('V8',var.V8));
                 publish.single(var.MQTT_TOPIC_06, str(msg), hostname=var.MQTT_SERVER);
+
+	#DATAFB
+        elif reason == 'V1FB':
+                var.V1FB = value;
+                msg = Json(('V1FB',var.V1FB),('V2FB',var.V2FB),('V3FB',var.V3FB),('V4FB',var.V4FB),('V5FB',var.V5FB),('V6FB',var.V6FB),('V7FB',var.V7FB),('V8FB',var.V8FB));
+                publish.single(var.MQTT_TOPIC_12, str(msg), hostname=var.MQTT_SERVER);
+        elif reason == 'V2FB':
+                var.V2FB = value;
+                msg = Json(('V1FB',var.V1FB),('V2FB',var.V2FB),('V3FB',var.V3FB),('V4FB',var.V4FB),('V5FB',var.V5FB),('V6FB',var.V6FB),('V7FB',var.V7FB),('V8FB',var.V8FB));
+                publish.single(var.MQTT_TOPIC_12, str(msg), hostname=var.MQTT_SERVER);
+        elif reason == 'V3FB':
+                var.V3FB = value;
+                msg = Json(('V1FB',var.V1FB),('V2FB',var.V2FB),('V3FB',var.V3FB),('V4FB',var.V4FB),('V5FB',var.V5FB),('V6FB',var.V6FB),('V7FB',var.V7FB),('V8FB',var.V8FB));
+                publish.single(var.MQTT_TOPIC_12, str(msg), hostname=var.MQTT_SERVER);
+        elif reason == 'V4FB':
+                var.V4FB = value;
+                msg = Json(('V1FB',var.V1FB),('V2FB',var.V2FB),('V3FB',var.V3FB),('V4FB',var.V4FB),('V5FB',var.V5FB),('V6FB',var.V6FB),('V7FB',var.V7FB),('V8FB',var.V8FB));
+                publish.single(var.MQTT_TOPIC_12, str(msg), hostname=var.MQTT_SERVER);
+        elif reason == 'V5FB':
+                var.V5FB = value;
+                msg = Json(('V1FB',var.V1FB),('V2FB',var.V2FB),('V3FB',var.V3FB),('V4FB',var.V4FB),('V5FB',var.V5FB),('V6FB',var.V6FB),('V7FB',var.V7FB),('V8FB',var.V8FB));
+                publish.single(var.MQTT_TOPIC_12, str(msg), hostname=var.MQTT_SERVER);
+        elif reason == 'V6FB':
+                var.V6FB = value;
+                msg = Json(('V1FB',var.V1FB),('V2FB',var.V2FB),('V3FB',var.V3FB),('V4FB',var.V4FB),('V5FB',var.V5FB),('V6FB',var.V6FB),('V7FB',var.V7FB),('V8FB',var.V8FB));
+                publish.single(var.MQTT_TOPIC_12, str(msg), hostname=var.MQTT_SERVER);
+        elif reason == 'V7FB':
+                var.V7FB = value;
+                msg = Json(('V1FB',var.V1FB),('V2FB',var.V2FB),('V3FB',var.V3FB),('V4FB',var.V4FB),('V5FB',var.V5FB),('V6FB',var.V6FB),('V7FB',var.V7FB),('V8FB',var.V8FB));
+                publish.single(var.MQTT_TOPIC_12, str(msg), hostname=var.MQTT_SERVER);
+        elif reason == 'V8FB':
+                var.V8FB = value;
+                msg = Json(('V1FB',var.V1FB),('V2FB',var.V2FB),('V3FB',var.V3FB),('V4FB',var.V4FB),('V5FB',var.V5FB),('V6FB',var.V6FB),('V7FB',var.V7FB),('V8FB',var.V8FB));
+                publish.single(var.MQTT_TOPIC_12, str(msg), hostname=var.MQTT_SERVER);
 
 
 #publish.single(MQTT_TOPIC_02, msgTest, hostname=MQTT_SERVER);
